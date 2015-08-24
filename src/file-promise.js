@@ -12,6 +12,8 @@ function readFile(path) {
     });
 }
 
+module.exports.readFile = readFile;
+
 readFile('../package.json')
     .then(console.log)
     .catch(console.log);
