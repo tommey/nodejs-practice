@@ -14,14 +14,17 @@ function readFile(path) {
 
 module.exports.readFile = readFile;
 
-readFile('../package.json')
-    .then(console.log)
-    .catch(console.log);
+function runTest() {
+	readFile('../package.json')
+    		.then(console.log)
+    		.catch(console.error);
 
-Promise.all([
-    readFile('../apple'),
-    readFile('../banana'),
-    readFile('../peach')
-])
-    .then(console.log)
-    .catch(console.error);
+	Promise.all([
+    		readFile('../apple'),
+    		readFile('../banana'),
+    		readFile('../peach')
+	])
+    		.then(console.log)
+    		.catch(console.error);
+}
+
